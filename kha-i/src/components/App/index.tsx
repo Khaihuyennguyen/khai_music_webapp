@@ -8,19 +8,24 @@ import { useEffect } from 'react'
 function App() {
   const [token, setToken] = useState<string | null>(null)
 
+
+  
+
   useEffect(  () => {
     getToken()
     
-  })
-
+  },[])
+  console.log(token)
   const getToken = async () => {
+  
     const clientId = import.meta.env.VITE_CLIENT_ID;
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
 
     if (code) {
-      const accessToken = getAccessToken(clientId, code)
+      const accessToken = await getAccessToken(clientId, code)
       setToken(accessToken)
+      
     }
   }
 
@@ -31,10 +36,12 @@ function App() {
         </>
       )
   } else {
+    return (
     <>
+
       <TrackInfo/>
     </>
-  }
+    )}
 
   
 }

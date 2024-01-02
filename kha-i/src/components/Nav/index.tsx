@@ -3,7 +3,7 @@ import { redirectToAuthCodeFlow } from "../../auth";
 const Nav = () => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
     const handleClick = async () => {
-        await redirectToAuthCodeFlow(clientId);
+        await redirectToAuthCodeFlow(clientId)
     }
     return (
         <>
