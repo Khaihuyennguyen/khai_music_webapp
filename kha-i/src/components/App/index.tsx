@@ -1,12 +1,19 @@
-
+import Login from '../Login'
+import TrackInfo from '../Trackinfo';
+import {useState} from 'react';
 function App() {
+  const [token, setToken] = useState<string | null>(null)
+  if (!token) {
+      return (
+        <>
+          <Login></Login>
+        </>
+      )
+  } else {
+    <TrackInfo></TrackInfo>
+  }
 
-
-  return (
-    <>
-
-    </>
-  )
+  
 }
 
 export default App
