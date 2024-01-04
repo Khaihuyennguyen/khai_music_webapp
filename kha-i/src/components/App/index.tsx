@@ -5,14 +5,14 @@ import { getAccessToken } from '../../auth'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Nav from '../Nav'
-
+import { GlobalStyle } from '../../styles';
 function App() {
   const [token, setToken] = useState<string | null>(null)
   const [profile, setProfile] = useState<string | null>(null)
   const clientId = import.meta.env.VITE_CLIENT_ID;
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
-
+  const GlobalStyleProxy: any = GlobalStyle;
   
   // Everytime someone login, trigger the functions
   useEffect(  () => {
@@ -47,12 +47,14 @@ function App() {
   if (!token) {
       return (
         <>
+          <GlobalStyleProxy/>
           <Login/>
         </>
       )
   } else {
     return (
     <>
+        <GlobalStyleProxy />
       <Nav
         profile={profile}></Nav>
       <TrackInfo/>

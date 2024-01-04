@@ -1,7 +1,8 @@
 import { redirectToAuthCodeFlow } from "../../auth";
+import { Navbar, H1, Button, Profile } from "./style";
 
 interface Iprobs {
-    profile?: string;
+    profile?: string | null;
 }
 const Nav:React.FC<Iprobs> = ({profile}) => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -10,13 +11,16 @@ const Nav:React.FC<Iprobs> = ({profile}) => {
     }
     return (
         <>
-            <h1>Kha-i</h1>
+            <Navbar>
+            <H1>Kha-i</H1>
             {!profile ? (
-                <button onClick={handleClick}>Login</button>
+                <Button onClick={handleClick}>Login</Button>
             ): (
-                <img src={profile}></img>
+                        <Profile
+                            profile={profile}
+                        />
             )}
-            
+            </Navbar>
         </>
         
     )
