@@ -6,6 +6,11 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import Nav from '../Nav'
 import { GlobalStyle } from '../../styles';
+import { Container, TrackViewer, Side } from './styles'
+
+
+
+
 function App() {
   const [token, setToken] = useState<string | null>(null)
   const [profile, setProfile] = useState<string | null>(null)
@@ -55,9 +60,15 @@ function App() {
     return (
     <>
         <GlobalStyleProxy />
+        
       <Nav
         profile={profile}></Nav>
+        <Container>
+      <TrackViewer>
       <TrackInfo/>
+          </TrackViewer>
+      <Side/>
+        </Container>
     </>
     )}
 
