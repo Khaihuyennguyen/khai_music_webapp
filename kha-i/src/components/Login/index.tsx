@@ -1,5 +1,5 @@
 import Nav from '../Nav'
-import { Container, Right, Left, P, H1 } from './styles'
+import { Container, Left, P } from './styles'
 
 const Login:React.FC = () => {
 

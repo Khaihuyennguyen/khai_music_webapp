@@ -3,7 +3,7 @@ import { ITrack, IState } from '../../types'
 import { useState } from 'react'
 
 interface IProps {
-  token: string | null;
+  token: string ;
   tracks: Array<string>
   setTrack: React.Dispatch<React.SetStateAction<ITrack | null>>
 }
@@ -20,6 +20,7 @@ const Controls:React.FC<IProps> = ( {token, tracks, setTrack} ) => {
         uris={tracks}
         hideCoverArt={true}
         hideAttribution={true}
+        // @ts-ignore
         inLineVolume={false}
         layout={'compact'}
         styles={{

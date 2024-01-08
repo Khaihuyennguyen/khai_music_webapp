@@ -70,6 +70,7 @@ function App() {
         "Content-type": "application/json",
       },
     })
+    // @ts-ignore
     const uris = Object.entries(data.items).map(([key,val]) => val.track.uri)
     console.log(uris)
     setTracks(uris)
