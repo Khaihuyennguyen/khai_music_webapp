@@ -34,7 +34,7 @@ export const Side = styled.div`
   align-items: center;
   min-width: 30vw;
   position: sticky;
-  border-left: 2px solid #000;
+  border-left: 4px solid #000;
   padding 0px 10px;
   background: white;
 
